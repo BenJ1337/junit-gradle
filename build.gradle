@@ -1,3 +1,8 @@
+wrapper {
+    gradleVersion = '7.0.2'
+    distributionUrl = distributionUrl.replace("bin", "all")
+}
+
 apply plugin: 'idea'
 //and standard one
 apply plugin: 'java'
@@ -10,10 +15,6 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(11))
     }
-}
-
-task wrapper(type: Wrapper) {
-    gradleVersion = '7.0.2'
 }
 
 sourceSets {
