@@ -1,0 +1,1 @@
+# Gradle Projekt mit JUnit 5 und AssertJ 3
