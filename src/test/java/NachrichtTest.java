@@ -11,13 +11,15 @@ import static org.mockito.Mockito.mock;
 public class NachrichtTest {
 
     @Test
-    void test_neueNachricht() {
+    void test_neueNachricht() throws InterruptedException {
         final String testNachricht = "Hallo an den Leser dieser Nachricht.";
         LocalDateTime start = LocalDateTime.now();
+        Thread.sleep(1);
         Nachricht msg = new Nachricht(testNachricht);
+        Thread.sleep(1);
         assertThat(msg).extracting(Nachricht::getText).isNotNull().isEqualTo(testNachricht);
-        assertThat(msg).is(new Condition<>(n -> n.getZeitstempel().isBefore(LocalDateTime.now()), ""));
-        assertThat(msg).is(new Condition<>(n -> n.getZeitstempel().isAfter(start), ""));
+        assertThat(msg).is(new Condition<>(n -> n.getZeitstempel().isBefore(LocalDateTime.now()), "1"));
+        assertThat(msg).is(new Condition<>(n -> n.getZeitstempel().isAfter(start), "2"));
     }
 
     @Test
