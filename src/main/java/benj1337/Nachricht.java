@@ -1,3 +1,5 @@
+package benj1337;
+
 import java.time.LocalDateTime;
 
 public class Nachricht {
