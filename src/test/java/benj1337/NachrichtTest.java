@@ -28,7 +28,7 @@ class NachrichtTest {
         final String text = "Hello Mockito";
         final LocalDateTime zeitstempel = LocalDateTime.now();
         Nachricht nachricht = mock(Nachricht.class);
-        doReturn(text+1).when(nachricht).getText();
+        doReturn(text).when(nachricht).getText();
         doReturn(zeitstempel).when(nachricht).getZeitstempel();
         Assertions.assertThat(nachricht).isNotNull();
         Assertions.assertThat(nachricht).extracting(Nachricht::getText).isEqualTo(text);
